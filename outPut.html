@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Results</title>
+  <script>
+    function displayData() {
+      const params = new URLSearchParams(window.location.search);
+      const data = JSON.parse(decodeURIComponent(params.get('data')));
+
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = `
+        <h3>Data:</h3>
+        <pre>${JSON.stringify(data, null, 2)}</pre>
+      `;
+    }
+
+    window.onload = displayData;
+
+    // ich hoffe niemand sieht diesen Code :skull:
+  </script>
+</head>
+<body>
+  <div id="result" style="padding: 20px; background-color: #f4f4f4; border-radius: 8px;"></div>
+</body>
+</html>
